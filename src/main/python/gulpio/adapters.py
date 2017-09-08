@@ -280,7 +280,7 @@ class ImageFolderAdapter(AbstractDatasetAdapter):
         data = []
         for img_path in img_paths:
             path = os.path.dirname(img_path)
-            category_name = path.split('/')[-1]
+            category_name = os.path.split(path)[-1]
             img_name = os.path.basename(img_path)
             category_name = category_name
             data.append({'id': img_name, 'label': category_name, 'path': path})
